@@ -1,11 +1,15 @@
 const getResponseForService = require('./getResponseForService')
 
+let NUMBEROFREQUESTS = 0
+
 const handleRequest = (request, response) => {
 
 
     const service = request.params.service
 
-    console.log('Requested data for '.concat(service))
+
+    NUMBEROFREQUESTS = NUMBEROFREQUESTS  +1 
+    console.log(NUMBEROFREQUESTS + '. Requested data for '.concat(service))
 
 
     const serviceTags = getResponseForService(service)
