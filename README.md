@@ -5,7 +5,7 @@ Usage:
 
 
 ```bash
-git clone https://github.com/toppyy/mockTaggingService
+git clone https://github.com/duck-duck-tag/mockTaggingService
 cd mockTaggingService
 npm install
 npm run dev
