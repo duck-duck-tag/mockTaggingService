@@ -15,8 +15,10 @@ const tags = [
 
 
 const getTags = () => {
+
+    
   
-    return tags.filter(tag => tag.confidence > Math.random()) // Tag confidence is its probability to be included
+    return tags.map(tag => ({ ...tag, confidence: Math.random()  })).filter(tag => tag.confidence > Math.random()) // Tag confidence is its probability to be included
 }
 
 
