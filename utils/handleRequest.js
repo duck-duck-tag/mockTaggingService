@@ -9,7 +9,8 @@ const handleRequest = (request, response) => {
 
 
     NUMBEROFREQUESTS = NUMBEROFREQUESTS  +1 
-    console.log(NUMBEROFREQUESTS + '. Requested data for '.concat(service))
+
+    console.log( NUMBEROFREQUESTS + '. Requested data for ' + service  )
 
 
     const serviceTags = getResponseForService(service)
@@ -18,7 +19,7 @@ const handleRequest = (request, response) => {
     
     
 
-    setTimeout(() =>     response.send( serviceTags ? JSON.stringify(serviceTags)  : tags.default ), wait)
+    setTimeout(() =>     response.send( JSON.stringify(serviceTags)  ), wait)
 }
 
 module.exports = handleRequest

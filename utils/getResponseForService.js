@@ -49,7 +49,7 @@ const getResponseForService = service => {
         response.tags = getTags() 
     }
 
-    if (!service) {
+    if (!response) {
         response = {
             tags: getTags()
         }
