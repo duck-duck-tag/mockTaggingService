@@ -10,7 +10,7 @@ const handleRequest = (request, response) => {
 
     NUMBEROFREQUESTS = NUMBEROFREQUESTS  +1 
 
-    console.log( NUMBEROFREQUESTS + '. Requested data for ' + service  )
+    console.log( NUMBEROFREQUESTS + '. Requested data for ' + service + ' with path ' + request.path ) 
 
 
     const serviceTags = getResponseForService(service)
