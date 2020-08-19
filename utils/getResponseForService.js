@@ -25,6 +25,14 @@ const services = {
         ]
     }
 
+    ,aws: {
+       
+        Labels: [
+            // Tags are inserted here
+        ]
+        
+    }
+
 }
 
 
@@ -40,8 +48,15 @@ const getResponseForService = service => {
         tags = tags.map(tag => ({ class: tag.name,score: tag.confidence }))
         // mocks response.data.images[1].classifiers[0].classes
         response.images[1].classifiers[0].classes = tags
+    }
 
+    if (service === 'aws') {
 
+        let tags = getTags()  
+        // mocks aws tag structure
+        tags = tags.map(tag => ({ Name: tag.name,Confidence: tag.confidence }))
+
+        response.Labels = tags
 
     }
 
