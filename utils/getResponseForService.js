@@ -33,6 +33,19 @@ const services = {
         
     }
 
+    ,google: {
+       
+        responses: [
+            {
+                labelAnnotations: [
+                 // Tags are inserted here
+                ]
+            }
+           
+        ]
+        
+    }
+
 }
 
 
@@ -62,6 +75,15 @@ const getResponseForService = service => {
 
     if (service === 'azure') {
         response.tags = getTags() 
+    }
+
+    if (service === 'google') {
+        
+        let tags = getTags()  
+        // mocks google tag structure
+        tags = tags.map(tag => ({ description: tag.name,Confidence: tag.score }))
+
+        response.responses[0].labelAnnotations = tags
     }
 
     if (!response) {
