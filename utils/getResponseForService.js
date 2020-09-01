@@ -67,7 +67,9 @@ const getResponseForService = service => {
 
         let tags = getTags()  
         // mocks aws tag structure
-        tags = tags.map(tag => ({ Name: tag.name,Confidence: tag.confidence }))
+        const getParents = () => getTags().map(t => ({ Name: t.name }))
+        tags = tags.map(tag => ({ Name: tag.name,Confidence: tag.confidence, Parents: getParents() }))
+
 
         response.Labels = tags
 

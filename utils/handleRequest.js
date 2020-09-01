@@ -15,6 +15,8 @@ const handleRequest = (request, response) => {
 
     const serviceTags = getResponseForService(service)
 
+    console.log('returning', serviceTags)
+
     const wait = Math.random() * 4000 // Delay response between 0-4 secs at random
     
     
